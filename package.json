@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "module-name": "^0.0.1-security",
+    "prompt-sync": "^4.2.0"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
