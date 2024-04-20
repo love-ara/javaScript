@@ -19,7 +19,7 @@ let book = {
     name: "Simbi goes to school",
     author: "Ara"
 }
-console.log(book[id])
+//console.log(book[id])
 console.log(book)
 
 let theNumber = Number(prompt("Enter a number: "))
