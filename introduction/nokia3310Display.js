@@ -39,12 +39,12 @@ const phoneBook = new PhoneBook();
 
 function display1() {
     console.log('PHONE');
-    console.log('*Speed dial');
-    console.log('*Enter "1" to view contacts');
-    console.log('*Enter "2" to add contacts');
-    console.log('*Enter "3" to search contacts');
-    console.log('*Enter "4" to delete contact');
-    console.log('*Enter "0" to EXIT');
+    console.log('Speed dial');
+    console.log('Enter "1" to view contacts');
+    console.log('Enter "2" to add contacts');
+    console.log('Enter "3" to search contacts');
+    console.log('Enter "4" to delete contact');
+    console.log('Enter "0" to EXIT');
     const dial = parseInt(prompt('Enter your choice: '));
     methodCall(dial);
 }
@@ -79,6 +79,7 @@ function methodCall(number) {
             break;
         default:
             console.log('Nothing here');
+            back();
     }
 }
 
@@ -105,10 +106,9 @@ function add(contact) {
 }
 
 function back() {
-    console.log('*Enter "1" to view contacts');
-    console.log('*Enter "2" to add contacts');
-    console.log('*Enter "3" to search contacts');
-    // Rest of the options...
+    console.log('Enter "1" to view contacts');
+    console.log('Enter "2" to add contacts');
+    console.log('Enter "3" to search contacts');
 }
 
  display1();
