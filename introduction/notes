@@ -1,0 +1,4 @@
+
+1. Difference btw Map and reduce:
+-Map : transforms each element of an array and returns a new array.
+-Reduce: combines all the elements of an array into a single value.
