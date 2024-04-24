@@ -2,3 +2,25 @@
 1. Difference btw Map and reduce:
 -Map : transforms each element of an array and returns a new array.
 -Reduce: combines all the elements of an array into a single value.
+
+2. Map function accepts callback function that is called for each element in the array, and an optional thisArg parameter
+ that sets the value of this inside the callback function.
+
+3. Callbacks are functions passed as arguments and run after a task is completed.
+
+4. difference btw let and var:
+the main difference is their scope.
+-let : variables declared with let are blocked-scoped.
+-var: variables  declared with var are function-scoped.
+
+5. JavaScript has 2 scopes: Global and Local(Function scope and block scope)
+
+6. Module scope: code.js(structure.js, main.js, utils.js)
+
+7. OOP : 
+ 4 concept of opp: Encapsulation-> is same as separation of concerns, it is also hiding of information and behaviour into an object
+ Abstraction: is hiding a behavior or the inner working of an object. hiding implementations.
+ methods: Are behavior
+ classes: A template 
+ polymorphism: object that inherit from another but implement the method differently
+ inheritance: is about method sharing.
