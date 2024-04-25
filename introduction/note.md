@@ -78,11 +78,23 @@ const s = JSON.stringify(obj);
 console.log(s);
 
 
+-prototype is a property of every js object.
 
+function Human(_name, _age){
+    this._name = _name;
+    this._age = _age;
+}
 
+function Employer(_name, _age, _designation){
 
+this.designation = _designation;
+    this.setAge = (newAge) => {
+        console.log('${fnewAge}');
+        this.age = newAge;
+    }
+}
 
-
+Human.call(this._name, _age) : .call will make attributes of a function available to another
 
 
 
