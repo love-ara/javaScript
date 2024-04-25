@@ -24,3 +24,68 @@ the main difference is their scope.
  classes: A template 
  polymorphism: object that inherit from another but implement the method differently
  inheritance: is about method sharing.
+
+ 8.OOP in js:
+ -prototype-based programming: when obj encapsulates its properties, its methods and datas instead of the class
+
+ let animal = {
+    type : "Unknown",
+    sound: function(){
+        console.log("the " +this.type + "makes a sound")
+    }
+ }
+ let obj  = Object.create(animal);
+ dog.type = "Dog";
+
+let goat = {
+    color: "black";
+}
+Object.setPrototypeOf(goat, animal);
+goat.type = "Goat";
+
+let vehicle = {wheels: 4};
+let car = {
+    seats : 5,
+    __proto__: vehicle,
+    wheels : 6
+}
+
+JavaScript constructor function: construction function or obj construction function
+function Person(name, age){
+    this.name  = name;
+    this.age = age;
+
+    this.sayName = function(){
+        console.log(this.name);
+    }
+}
+
+const personOne = new Person("Jumoke", 13);
+console.log(personOne.name)
+console.log(new Person("John", 20));
+personTwo.sayName();
+ -class-based programming
+
+JavaScript classes 
+classes are bluePrints of a type of object with the certain properties and methods to generate object
+
+
+const jsom = '{"result" : true, "count" : 42}';
+const obj = JSON.parse(jsom);
+console.log(obj);
+
+const s = JSON.stringify(obj);
+console.log(s);
+
+
+
+
+
+
+
+
+
+
+
+
+ 
