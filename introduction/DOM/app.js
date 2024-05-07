@@ -11,14 +11,54 @@
 
 // const bookList = document.querySelector("#book-list")
 // console.log(bookList);
-const bookList = document.querySelectorAll("#book-list ul li");
+// const bookList = document.querySelectorAll("#book-list ul li");
+// bookList.forEach((book) => {
+//     console.log(book);
+// })
+
+// const bookList = document.querySelectorAll("#book-list ul li");
+//  bookList.forEach((book) => {
+//        console.log(book.textContent);
+// })
+
+// const bookList = document.querySelectorAll("#book-list ul li");
+// console.log(bookList[1].textContent)
+const bookList = document.querySelectorAll("#book-list ul li .name");
+console.log(bookList);
 bookList.forEach((book) => {
-    console.log(book);
+    book.textContent += " (test)";
+    //console.log(book.textContent)
 })
+//console.log(bookList[1].innerHTML)
+ //bookList.forEach((book) => {
+       //console.log(book.textContent);
+//})
 
-for(const element of bookList){
-    console.log(element);
-}
 
-console.log(Array.isArray(bookList));
+
+
+
+
+
+// for(const element of bookList){
+//     console.log(element);
+// }
+
+// console.log(Array.isArray(bookList));
 //console.log(bookList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
