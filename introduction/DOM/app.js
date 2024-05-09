@@ -13,7 +13,7 @@
 // console.log(addbook.previousSibling);
 
 const bookList = document.querySelector("#book-list ul");
-console.log(bookList);
+// console.log(bookList);
 bookList.addEventListener("click", (event)=>{
     //console.log(event);
        let className = event.target.className;
@@ -23,14 +23,14 @@ bookList.addEventListener("click", (event)=>{
         // li.parentElement.removeChild(li);
         bookList.removeChild(li);
        }
-     console.log(className);
+    //  console.log(className);
 })
 
 
 const  searchBook = document.forms["search-books"];
 
 const listOfBooks = document.querySelectorAll("#book-list li .name");
-console.log(listOfBooks);
+// console.log(listOfBooks);
 searchBook.addEventListener("keyup", function(event){
     let inputText = event.target.value.toLowerCase();
 
@@ -39,7 +39,7 @@ searchBook.addEventListener("keyup", function(event){
     let isIncludInputText = title.includes(inputText);
 
     let parentNode = book.parentNode;
-        console.log(parentNode);
+        // console.log(parentNode);
 
     if(isIncludInputText){
         parentNode.style.display = "block";
@@ -50,14 +50,34 @@ searchBook.addEventListener("keyup", function(event){
     })
 });
 
-const addBook = document.form["add-book"];
-console.log(addBook);
+const addBook = document.forms["add-book"];
+// console.log(addBook);
 
 addBook.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const inputValue = addBook.querySelector("input").value;
-    console.log(inputValue);
+    const inputValue = addBook.querySelector("input").value.trim();
+    // console.log(inputValue);
+    if(inputValue){
+        const liTag = document.createElement("li");
+        const firstSpan = document.createElement("span");
+        const secondSpan = document.createElement("span");
+
+        firstSpan.className = 'name';
+        secondSpan.classList = 'delete' 
+
+
+        liTag.appendChild(firstSpan);
+        liTag.appendChild(secondSpan);
+
+        firstSpan.textContent = inputValue;
+        secondSpan.textContent = "delete";
+
+        bookList.appendChild(liTag);
+        bookList.prepend(liTag);
+
+        addBook.reset();
+    }
 })
 
 // const wrapper = document.getElementById("wrapper");

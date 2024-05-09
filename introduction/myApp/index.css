@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer{
+    /* margin-top: 30px; */
+    width: 40vw;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.inputContainer{
+    padding: 5px 20px;
+
+}
+
+.inputContainer input{
+    width: 99%;
+
+}
+.submit button{
+    border: none; 
+    font-size: 16px; 
+    font-weight: 500
+}
+
+.submit{
+    width: 100px;
+    background-color: #000000	;
+    color: #FFFFFF;
+    border: none;
+    height: 26px;
+    border-radius: 3px;
+}
+
+.submit:hover{
+    background-color: #800080	;
+    
+}

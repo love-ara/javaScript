@@ -100,4 +100,7 @@ Human.call(this._name, _age) : .call will make attributes of a function availabl
 
 
 
+Asynchronous:
+
+
  
