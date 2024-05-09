@@ -1,5 +1,5 @@
-const addBook = document.getElementById("add-book");
-// console.log(addBook)
+// const addBook = document.getElementById("add-book");
+//  console.log(addBook)
 // const addbook = document.querySelector("#add-book");
 // console.log(addbook)
 // const add = document.querySelector("button");
@@ -9,9 +9,56 @@ const addBook = document.getElementById("add-book");
 
 
 //console.log(addBook.parentNode);
-//console.log(addBook.previousElementSibling);
+//  console.log(addbook.previousElementSibling);
+// console.log(addbook.previousSibling);
+
+const bookList = document.querySelector("#book-list ul");
+console.log(bookList);
+bookList.addEventListener("click", (event)=>{
+    //console.log(event);
+       let className = event.target.className;
+    //    if(Object.is(className, "delete")){
+        if(className === "delete"){
+        let li = event.target.parentElement
+        // li.parentElement.removeChild(li);
+        bookList.removeChild(li);
+       }
+     console.log(className);
+})
 
 
+const  searchBook = document.forms["search-books"];
+
+const listOfBooks = document.querySelectorAll("#book-list li .name");
+console.log(listOfBooks);
+searchBook.addEventListener("keyup", function(event){
+    let inputText = event.target.value.toLowerCase();
+
+    listOfBooks.forEach((book) =>{
+    let title = book.textContent.toLocaleLowerCase();
+    let isIncludInputText = title.includes(inputText);
+
+    let parentNode = book.parentNode;
+        console.log(parentNode);
+
+    if(isIncludInputText){
+        parentNode.style.display = "block";
+    }else{
+        parentNode.style.display = "none";
+    }
+        
+    })
+});
+
+const addBook = document.form["add-book"];
+console.log(addBook);
+
+addBook.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const inputValue = addBook.querySelector("input").value;
+    console.log(inputValue);
+})
 
 // const wrapper = document.getElementById("wrapper");
 // console.log(wrapper);
