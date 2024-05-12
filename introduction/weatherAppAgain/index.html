@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="index.css">
     <title>Weather App</title>
 </head>
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="Enter city name" spellcheck="false">
-            <button><img src="icons/search.png"></button>
-        </div>
-
-        <div class="weather">
-            <img src="icons/rain.png" class="weather-Icon">
-            <h1 class="temp">22°c</h1>
-            <h2 class="city">Lagos City</h2>
-            <div class="col">
-                <img src="icons/humidity.png">
-            <div>
-                <p class="humidity">50%</p>
-                <p>humidity </p>
-            
-            </div>
-            </div>
+            <input type="text" id="city-input" placeholder="Enter city name" spellcheck="false">
+            <button id="city-input-btn"
+                 onclick="checkWeather($('#city-input').val())">
+                 <img src="icons/search.png">
+            </button>
+            <div id="weather-info">
+           <h3 id="city-name"></h3>
+           <p id="date"></p>
+           <p id="temperature"></p>
+           <p id="description"></p>
+           <p id="wind-speed"></p>
+       </div>
         </div>
     </div>
 
+   
     <script src="index.js"></script>
 </body>
 </html>
