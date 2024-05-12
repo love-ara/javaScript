@@ -4,7 +4,7 @@ const apiUrls = {
   quiz: 'http://localhost:9091/quiz',
   start: 'http://localhost:9091/start'
 }
-const form = document.forms["form"];
+//const form = document.forms["form"];
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   submitEventListener('view-quiz', viewQuiz);
   submitEventListener('take-quiz', takeQuiz);
 
-  initializeUserDetails();
+   initializeUserDetails();
   getAllQuiz();
 });
 
@@ -184,7 +184,7 @@ async function makeApiCallWith(url, method, requestData){
 
     function handleLogoutSuccess(){
       alert('Logout successful!');
-      window.location.href = 'login-page.html';
+      window.location.href = 'index.html';
     }
 
     function handleLogoutFailure(){
@@ -245,9 +245,79 @@ async function makeApiCallWith(url, method, requestData){
     const requestData = {
       quizPin: formData.get('quizPin'),
       username: username,
+      //answers hashmap
       answers: formData.get('answer')
 
     };
   
     }
 
+    async function initializeUserDetails(){
+      const urlParams = new URLSearchParams(windows.location.search);
+      const userData = {};
+      for (const [key, value] of urlParams) {
+        userData[key] = value;
+      }
+      displayDetailsIn(userData);
+
+      const usernameElement = document.getElementById('username');
+      const username = usernameElement.textContent.trim();
+      sessionStorage.setItem('usrname', username);
+    }
+
+    function redirectToUsersPage(userData) {
+      const queryString = Object.keys(userData).map(key => key + '=' + userData[key]).join('&');
+      window.location.href= `index.html?${queryString}`;
+    }
+
+    function displayDetailsIn(userData) {
+      const userIdElement = document.getElementById('user-id');
+      userIdElement.innerHTML = `<strong>ID:</strong> ${userData.id}`;
+      userIdElement.style.color = '#555';
+    
+      const userNameElement = document.getElementById('username');
+      userNameElement.innerHTML = `<strong>Username:</strong> ${userData.username}`;
+      userNameElement.style.color = '#555';
+    }
+    
+    async function getAllQuiz(){
+      try{
+        const response = await makeApiCallWith('${apiUrls.quiz}/all', 'GET');
+        response.successful= "";
+
+        if (!response.successful) {
+           new Error(`Error: ${response.status}`);
+        }
+    
+        const quizzes = response.data.quiz;
+        displayQuiz(quizzes);
+      } catch (error) {
+        console.error('Failed to fetch quiz:', error);
+      }
+    }
+    
+    function displayQuiz(quiz) {
+      const allQuiz = document.getElementById('quizzes');
+      allQuiz.innerHTML = '';
+    
+      quiz.forEach(quiz => {
+        const quizItem = document.createElement('div');
+        quizItem.classList.add('quiz-item');
+        quizItem.innerHTML = `
+          <p class="title">Title: ${quiz.title}</p>
+          <p class="username">Author: ${quiz.username}</p>
+          <p class="quentions">Question: ${quiz.question}</p>
+          <p class="genre">ID: ${quiz.quizPin}</p>`;
+        bookList.appendChild(quizItem);
+      });
+    }
+
+    function showSection(sectionID) {
+      document.querySelectorAll('section').forEach(section => {
+          section.classList.remove('active');
+      });
+
+      document.getElementById(sectionID).classList.add('active');
+  }
+    
+    

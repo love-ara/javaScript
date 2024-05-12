@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+      <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity= 
+"sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script> 
+    <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+        integrity= 
+"sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script> 
+</head>
+<body>
+    <div class="calculator">
+    <input type="text" id="result" readonly>
+    <br>
+    <div class="buttons">
+    <button onclick="display('7')">7</button>
+    <button onclick="display('8')">8</button>
+    <button onclick="display('9')">9</button>
+    <button onclick="display('+')">+</button>
+    <button onclick="display('4')">4</button>
+    <button onclick="display('5')">5</button>
+    <button onclick="display('6')">6</button>
+    <button onclick="display('-')">-</button>
+    <button onclick="display('1')">1</button>
+    <button onclick="display('2')">2</button>
+    <button onclick="display('3')">3</button>
+    <button onclick="display('*')">*</button>
+    <button onclick="clr()">C</button>
+    <button onclick="display('0')">0</button>
+    <button onclick="display('.')">.</button>
+    <button onclick="display('/')">/</button>
+    <button onclick="solve()">=</button>
+  </div>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>
