@@ -17,8 +17,10 @@ function addTask() {
         listItem.remove(); 
         saveTasksToLocalStorage(); 
       });
-      listItem.appendChild(deleteButton); 
       taskList.appendChild(listItem);
+
+      listItem.appendChild(deleteButton); 
+
       taskInput.value = "";
       saveTasksToLocalStorage(); 
     }
