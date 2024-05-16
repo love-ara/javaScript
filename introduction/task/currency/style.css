@@ -1,16 +1,16 @@
 body {
-    background-color: #000;
+    background-color: #fcf9f9;
     background-position: center;
     background-size: cover;
 }
 
 .heading {
-    font-family: 'Pacifico', cursive;
+    font-family: 'serif', cursive;
     margin: 35px auto 20px;
 }
 
 hr {
-    border-top: 2px solid black;
+    border-top: 2px solid #800880;
     width: 40%;
     margin-bottom: 55px;
 }
@@ -20,7 +20,7 @@ hr {
     margin: auto;
     padding: 30px;
     border-radius: 5px;
-    background-color: #000;
+    background-color: #d6d4d4;
     color: #800880;
 }
 
@@ -33,7 +33,7 @@ label {
 }
 
 #finalAmount {
-    font-family: 'Lobster', cursive;
+    font-family: 'serif', cursive;
     display: none;
     margin: 50px auto;
 }
