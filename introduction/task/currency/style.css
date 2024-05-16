@@ -1,9 +1,9 @@
 body {
-    background-color: aliceblue;
+    background-color: #000;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    /* background-repeat: no-repeat; */
 }
 
 .heading {
@@ -22,8 +22,8 @@ hr {
     margin: auto;
     padding: 30px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: #000;
+    color: #800880;
 }
 
 label {
