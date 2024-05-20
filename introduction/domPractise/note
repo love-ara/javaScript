@@ -1,0 +1,8 @@
+querySelector - select
+eventListener - make interaction
+style property - change css
+
+Dom - document object manipulation; methods
+it is the way you change html with javascript.
+the dom can include methods, sub objects and proprties
+methods are functions attached to the document that allows select sub object
