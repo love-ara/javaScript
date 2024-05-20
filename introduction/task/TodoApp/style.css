@@ -1,9 +1,15 @@
 *{
-    background: #d1cfcf;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
+.mainContainer{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9fd1ea, #605159);
+  padding: 10px;
+}
 #header{
     background: #d1cfcf;
     display: flex;

@@ -1,0 +1,28 @@
+*{
+    font-size: 22px;
+}
+body{
+    background: #fff;
+    color: #333;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+a {
+    color: rgb(41, 32, 170);
+}
+a :visited {
+    color: #fff;
+}
+a:hover{
+    color: #eee;
+}
+h2 a {
+    color: #333;
+}
+#about a {
+    color: #333;
+}

@@ -1,80 +1,49 @@
+var taskList = document.getElementById("taskList");
+const inputBox = document.getElementById("input-box");
+
+
 function addTask() {
-    var taskInput = document.getElementById("taskInput");
-    var taskDescription = taskInput.value.trim();
-    if (taskDescription !== "") {
-      var taskList = document.getElementById("taskList");
-      var listItem = document.createElement("li");
-      listItem.className = "taskItem";
+    if (inputBox.value !== "") {
+      var li = document.createElement("li");
+      li.innerHTML = inputBox.value;
+      taskList.appendChild(li);
       var checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.addEventListener("change", handleCheckboxChange); 
-      var textNode = document.createTextNode(taskDescription);
-      listItem.appendChild(checkbox);
-      listItem.appendChild(textNode);
-      var deleteButton = document.createElement("button"); 
-      deleteButton.textContent = "Delete";
-      deleteButton.addEventListener("click", function() {
-        listItem.remove(); 
-        saveTasksToLocalStorage(); 
-      });
-      taskList.appendChild(listItem);
-
-      listItem.appendChild(deleteButton); 
-
-      taskInput.value = "";
-      saveTasksToLocalStorage(); 
+      // var textNode = document.createTextNode(taskDescription);
+      li.appendChild(checkbox);
+      // listItem.appendChild(textNode);
+      var span = document.createElement("SPAN"); 
+      span.innerHTML = "\u00d7"
+      li.appendChild(span); 
     }
+      inputBox.value = "";
+      saveTasksToLocalStorage(); 
+    
   }
+
+  taskList.addEventListener("click", function(e){
+    if(e.target.tagName === "li"){
+      e.target.classList.toggle("checked");
+      saveTasksToLocalStorage();
+    }else if(e.target.tagName === "SPAN"){
+      e.target.parentElement.remove();
+      saveTasksToLocalStorage();
+    }
+  }, false);
 
 
   function saveTasksToLocalStorage() {
-    var tasks = [];
-    var taskItems = document.getElementsByClassName("taskItem");
-    for (var i = 0; i < taskItems.length; i++) {
-      var task = {
-        description: taskItems[i].textContent,
-        completed: taskItems[i].querySelector("input[type='checkbox']").checked
-      };
-      tasks.push(task);
-    }
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("data", taskList.innerHTML);
   }
 
-
-  function handleCheckboxChange() {
-    saveTasksToLocalStorage();
+  function showTask(){
+    taskList.innerHTML = localStorage.getItem("data");
   }
+
+  showTask();
 
   var taskList = document.getElementById("taskList");
   taskList.addEventListener("change", handleCheckboxChange);
 
-  window.onload = function() {
-    loadTasksFromLocalStorage();
-  };
 
-function loadTasksFromLocalStorage() {
-    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    var taskList = document.getElementById("taskList");
-    
-    taskList.innerHTML = "";
-  
-    tasks.forEach(function(task) {
-      var listItem = document.createElement("li");
-      listItem.className = "taskItem";
-      var checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.checked = task.completed;
-      checkbox.addEventListener("change", handleCheckboxChange);
-      listItem.appendChild(checkbox);
-      var textNode = document.createTextNode(task.description);
-      listItem.appendChild(textNode);
-      var deleteButton = document.createElement("button"); 
-        deleteButton.textContent = "Delete";
-        deleteButton.addEventListener("click", function() {
-        listItem.remove(); 
-        saveTasksToLocalStorage(); 
-      });
-      listItem.appendChild(deleteButton); 
-      taskList.appendChild(listItem);
-    });
-  }
